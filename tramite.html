@@ -20,7 +20,7 @@
 
     <div class="container"> <!--Class sirve para darle estilos-->
         <!--Screen 1: consultar estado del tramite--> 
-        <section id="screen-status" class="screen active"> <!--El id se usa para identificarlo en el js-->
+        <section id="screen-status" class="screen "> <!--El id se usa para identificarlo en el js-->
             <h2>Consultar Estado del Tramite</h2>
             <p class="screen-description">Al realizar un tramite de alguna oficina del estado, puedes realizar el seguimiento y obtener el reporte actual de un tramite administrativo.</p>
             
@@ -32,7 +32,7 @@
             </div>
 
             <div class="form-group">
-                <label for ="doc-number"> nUmero de documento </label>
+                <label for ="doc-number"> Numero de documento </label>
                 <input type="text" id="doc-number" placeholder="Ingrese su numero de documento"> 
             </div>
 
@@ -45,17 +45,17 @@
 
 
         <!--Screen 2: validation-->
-        <section id="screen-validation" class="screen">
+        <section id="screen-validation" class="screen ">
             <h2>Validacion de datos del ciudadano</h2>
         <div class="grid-item">
             <div class="form-group">
                 <label>DNI</label>
-                <input type ="text" placeholder="Ingree su DNI">
+                <input type ="text" placeholder="Ingrese su DNI">
             </div>
 
             <div class="form-group">
                 <label>Digito de verificacion</label>
-                <input type ="text" placeholder="Ingree el digito">
+                <input type ="text" placeholder="Ingrese el digito">
             </div>
 
             <div class="form-group">
@@ -93,17 +93,17 @@
 
         </section>
 
-        <section id="screen-dashboard" class="screen ">
+        <section id="screen-dashboard" class="screen "> <!
             <h2>Mesa de partes</h2>
-            <p>Estimada
-                <strong>Zoraida Emperatriz</strong>
+            <p>Estimado
+                <strong> Jesus </strong>
                 , por este canal virtual podrá presentar documentos de forma rápida sin necesidad de acercase a la mesa de partes de RENIEC
             </p>
 
             <div class="dashboard-grid">
                 <div class="card" onclick="showScreen('registration')">
                     
-                    <div class="card-icon">📖</div> 
+                    <div class="card-icon">📕</div> 
                     <h3> Registro de documentos</h3>
                     <p>Presente un nuevo tramite</p>
                 </div>
@@ -111,7 +111,7 @@
                 <div class ="card" onclick="showScreen('inbox')">
                     
                     <div class="card-icon">📁</div>
-                    <h3> Tramites</h3>
+                    <h3> Mis documentos</h3>
                     <p>Consulte sus tramites realizados</p>
                 </div>
 
@@ -125,9 +125,9 @@
             <h2>Bandeja de mis documentos tramitados</h2>
             <div class="inbox-filter">
 
-                <div class="form-group form-group-no-margin">
+                <div class="form-group form-gropu-no-margin">
                     <label>Filtro de documentos</label>
-                    <input type="text" placeholder="Buscar por numero o asunto">
+                    <input type="text" placeholder="Buscar por numeros o asunto">
                 </div>
 
                 <div class="form-group form-group-no-margin">
@@ -145,7 +145,6 @@
 
             <div class ="flex-end mt-20">
                 <button class="btn btn-accent">Consultar</button>
-            </div>
 
             <table>
                 <thead>
@@ -159,71 +158,82 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>202400122</td>
+                        <td>202400123</td>
                         <td>SOLICITUD</td>
                         <td>RECTIFICACION DE DATOS</td>
                         <td>EN TRAMITE</td>
                         <td>22/03/2026</td>
                     </tr>
                     <tr>
-                        <td>202400128</td>
+                        <td>202600888</td>
                         <td>CARTA</td>
-                        <td>RECTIFICAICON</td>
+                        <td>CONSULTA TECNICA</td>
                         <td>FINALIZADO</td>
-                        <td>25/03/2026</td>
+                        <td>15/03/2026</td>
                     </tr>
                 </tbody>
             </table>
         </section>
 
         <!--REGISTRO DE DOCUMENTOS multistep-->
-        <section id="screen-registration" class="screen activate">
-
-            <h2>Registro de documentos</h2>
-
+        <section id="screen-registration" class="screen active">
+            <h2>Nuevo Registro de Documento</h2>
             <div class="progress-bar">
-
-                <div class="step active" id="step-header">
-
+                <div class="step active" id="step1-header">
                     <div class="step-number">1</div>
-                    <div class="step-label">Datos del ciudadano</div>
-
+                    <div class="step-label">Datos del Ciudadano</div>
                 </div>
-
-                <div class ="step-connector"></div>
-
-                <div class="step active" id="step-header">
-
+                <div class="step-connector"></div>
+                <div class="step" id="step2-header">
                     <div class="step-number">2</div>
-                    <div class="step-label">Datos del documento</div>
-
+                    <div class="step-label">Datos del Documento</div>
                 </div>
             </div>
-
             <div id="step1-content">
-                <h3>Datos del ciudadano</h3>
+                <h3>Datos del Ciudadano</h3>
                 <div class="form-group">
-                    <label>Correo electronico</label>
-                    <input type="text" value="zanahoras@gmail.com" readonly>
+                    <label>Correo Electronico</label>
+                    <input type="text" value="zoraida@gmail.com" readonly>
                 </div>
                 <div class="form-group">
                     <label>Celular</label>
-                    <input type="text" value="987654321" readonly>
+                    <input type="text" value="987987987">
                 </div>
+                <div class="flex-end mt-20">
+                    <button class="btn btn-primary" onclick="nextStep(2)">Siguiente</button>
+                </div>
+            </div>
 
+            <div class="step2-content" class="hidden">
+                <h3>Datos del Documento</h3>
                 <div class="form-group">
-                    <label>Siguiente</label>
-                    <button class="btn btn-primary" onclick="nextStep('2')">
+                    <label>Tipo de Documento</label>
+                    <select>
+                        <option>CARTA</option>
+                        <option>SOLICITUD</option>
+                        <option>OFICIO</option>
+                        <option>OTRO</option>
+                    </select>
                 </div>
-
+                <div class="form-group">
+                    <label>Asunto del Documento</label>
+                    <input type="text" placeholder="Ingrese el asunto">
+                </div>
+                <div class="form-group">
+                    <label>Archivo Principal</label>
+                    <input type="file">
+                </div>
+                <div class="flex-end mt-20">
+                    <button class="btn btn-secondary" onclick="nextStep(1)">Atras</button>
+                    <button class="btn btn-primary" onclick="alert('Documento registrado con exito')">Finalizar Registro</button>
+                </div>
             </div>
 
         </section>
 
-
-
-
     </div>
+
+
 
 
 
